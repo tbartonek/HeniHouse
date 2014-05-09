@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.henihouse.interfaces.variables.InterfacesVariables&apos; to &apos;Variables&apos;&#x0A;- Original project: &apos;Interfaces&apos;&#x0A;- Original element: &apos;com.henihouse.interfaces.variables.InterfacesVariables&apos;&#x0A;- Renamed element: &apos;com.henihouse.interfaces.variables.Variables&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;InterfacesVariables&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.henihouse.interfaces.variables{InterfacesVariables.java[InterfacesVariables" matchStrategy="1" name="Variables" qualified="false" references="true" similarDeclarations="false" stamp="1387962938949" textual="false" version="1.0"/>
+</session>

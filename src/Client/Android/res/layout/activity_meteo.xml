@@ -1,0 +1,1156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_black_3"
+    android:baselineAligned="false"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="@dimen/widthMenu"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:scrollbars="none" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/ibLock"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/lock_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibLock"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bAlarm"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibDevices"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView1"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/device_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibDevices"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bDevices"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibHeaters"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView5"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/climatic_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibHeaters"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bHeaters"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibWeathers"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView7"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/weather_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibWeathers"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bWeathers"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibComunicaton"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView8"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/comunication_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibComunicaton"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bComunication"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibCameras"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/camera_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibCameras"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bCameras"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibMultimedia"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView6"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/movie_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibMultimedia"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bMultimedia"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibSettings"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView3"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/services_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibSettings"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:text="@string/bSettings"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TableLayout
+                android:layout_width="600dp"
+                android:layout_height="355dp" >
+
+                <TableRow
+                    android:id="@+id/tableRowMeteoTemperature"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150dp"
+                    android:gravity="right" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureTitle"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_temperature"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textTitleSize"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|bottom"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tvMeteoTemperatureValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingLeft="10dp"
+                                android:text="24.1"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textValueSize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMeteoTemperatureUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|bottom"
+                                android:gravity="center"
+                                android:paddingLeft="10dp"
+                                android:text="@string/meteo_temperature_unit"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textUnitSize"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/graph_temperature"
+                        android:layout_width="400dp"
+                        android:layout_height="125dp"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowMeteoPressure"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150dp" >
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressureTitle"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_pressure"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textTitleSize"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|bottom"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tvMeteoPressureValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|bottom"
+                                android:gravity="right"
+                                android:paddingLeft="10dp"
+                                android:text="964"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textValueSize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMeteoPressureUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|bottom"
+                                android:gravity="right"
+                                android:paddingLeft="10dp"
+                                android:text="@string/meteo_pressure_unit"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textUnitSize"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/graph_pressure"
+                        android:layout_width="400dp"
+                        android:layout_height="125dp"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowMeteoOther"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp" >
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoHumidityTitle"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_humidity"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textTitleSmallSize"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|bottom"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tvMeteoHumidityValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|bottom"
+                                android:gravity="right"
+                                android:paddingLeft="10dp"
+                                android:text="49"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textValueSmallSize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMeteoHumidityUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|bottom"
+                                android:gravity="right"
+                                android:paddingLeft="10dp"
+                                android:text="@string/meteo_humidity_unit"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textUnitSmallSize"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoRainFallTitle"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_rainfall"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textTitleSmallSize"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|bottom"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tvMeteoRainFallValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:paddingLeft="10dp"
+                                android:text="100.5"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textValueSmallSize"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMeteoRainFallUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:paddingLeft="10dp"
+                                android:text="@string/meteo_rainfall_unit"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/textUnitSmallSize"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/tvMeteoLocationTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/meteo_location"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textDateSize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMeteoLocationValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textDateSize"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="355dp"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/ivMeteoCompass"
+                    android:layout_width="215dp"
+                    android:layout_height="215dp"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/compass_3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="left|top"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvMeteoWindTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/meteo_wind"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textTitleSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoWinValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|top"
+                            android:layout_marginRight="@dimen/bGapSmall"
+                            android:gravity="center"
+                            android:text="150"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textValueSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoWindUnit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|top"
+                            android:text="@string/meteo_wind_unit"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textUnitSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMeteoPrediction "
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@layout/borden_top_side"
+            android:gravity="center|bottom"
+            android:paddingTop="2dp" >
+
+            <LinearLayout
+                android:id="@+id/llMeteoPrediction1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="8dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" 
+                    >
+
+                    <TextView
+                        android:id="@+id/tvMeteoDate1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="2dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textDateSize"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ivMeteoStatus1"
+                        android:layout_width="@dimen/picturePrediction"
+                        android:layout_height="@dimen/picturePrediction"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/tableRow1Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_day"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoNight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_night"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureDay1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureNight1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            android:id="@+id/tvMeteoCloude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_cloudy"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_pressure"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoCloudy1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMeteoPrediction2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@layout/borden_left_side"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="8dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tvMeteoDate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="2dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textDateSize"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ivMeteoStatus2"
+                        android:layout_width="@dimen/picturePrediction"
+                        android:layout_height="@dimen/picturePrediction"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/tableRow1Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_day"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoNight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_night"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureDay2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureNight2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoCloude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_cloudy"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_pressure"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoCloudy2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMeteoPrediction3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@layout/borden_left_side"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="8dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tvMeteoDate3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="2dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textDateSize"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ivMeteoStatus3"
+                        android:layout_width="@dimen/picturePrediction"
+                        android:layout_height="@dimen/picturePrediction"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/tableRow1Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_day"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoNight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_night"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureDay3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureNight3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoCloude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_cloudy"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_pressure"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoCloudy3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMeteoPrediction4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@layout/borden_left_side"
+                android:orientation="vertical"
+                android:paddingLeft="10dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tvMeteoDate4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="2dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textDateSize"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ivMeteoStatus4"
+                        android:layout_width="@dimen/picturePrediction"
+                        android:layout_height="@dimen/picturePrediction"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/tableRow1Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_day"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoNight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_night"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureDay4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoTemperatureNight4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoCloude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meteo_cloudy"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="@string/meteo_pressure"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tvMeteoCloudy4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeteoPressure4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/textDateSize"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+
+</LinearLayout>

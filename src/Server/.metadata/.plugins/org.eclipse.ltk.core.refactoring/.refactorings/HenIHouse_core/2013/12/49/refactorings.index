@@ -1,0 +1,13 @@
+1386009104050	Move compilation unit
+1386009147125	Delete element
+1386009199673	Rename package 'control'
+1386009334093	Rename package 'core'
+1386009402479	Rename package 'database'
+1386009483764	Rename package 'devices'
+1386009532750	Rename package 'function'
+1386009592942	Rename package 'gui'
+1386181764934	Encapsulate field 'warning'
+1386187588710	Encapsulate field 'expanderWarning'
+1386274788842	Encapsulate field 'expanderError'
+1386357540448	Copy files
+1386357781231	Copy compilation units

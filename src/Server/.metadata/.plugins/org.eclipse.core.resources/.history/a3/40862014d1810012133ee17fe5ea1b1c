@@ -1,0 +1,38 @@
+
+import java.io.IOException;
+
+import com.pi4j.io.i2c.I2CBus;
+import com.pi4j.io.i2c.I2CFactory;
+
+public final class main {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws IOException, InterruptedException {
+		// TODO Auto-generated method stub
+
+        // get I2C bus instance
+        final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
+        MCP9801 teplomer_0 = new MCP9801(bus, 0);
+        teplomer_0.writeInitRegister(false, 12, false, false);
+        teplomer_0.readTemperature();
+        teplomer_0.writeAlarmTempAndHyst(5,7);
+        teplomer_0.oneShotTemperature(9); 
+        
+        MCP9801 teplomer_7 = new MCP9801(bus, 7);
+        teplomer_7.writeInitRegister(false, 12, false, false);
+        teplomer_7.readTemperature();
+        teplomer_7.writeAlarmTempAndHyst(5,7);
+        teplomer_7.oneShotTemperature(9); 
+        
+        for (int i = 0; i> 100;i++){
+        	teplomer_0.oneShotTemperature(11);
+        	
+        	teplomer_7.oneShotTemperature(11); 
+        }
+	}
+
+}

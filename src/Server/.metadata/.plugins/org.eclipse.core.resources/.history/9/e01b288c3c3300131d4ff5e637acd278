@@ -1,0 +1,76 @@
+package core;
+
+import function.Alarm;
+import function.ClimaticControl;
+import gui.SetVariables;
+import interfaces.I2CthroughPin;
+
+import java.io.IOException;
+
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.GpioPinDigitalMultipurpose;
+import com.pi4j.io.gpio.PinMode;
+import com.pi4j.io.gpio.PinPullResistance;
+import com.pi4j.io.gpio.RaspiPin;
+import com.pi4j.io.i2c.I2CBus;
+import com.pi4j.io.i2c.I2CFactory;
+
+import control.MainControl;
+import database.Device;
+import database.Variables;
+
+public final class main {
+    private static I2CthroughPin i2cExpanders;
+    private static I2CthroughPin i2cKeypads;
+    private static I2CthroughPin i2cHumiditySensor;
+    private static I2CthroughPin i2cADconverter;
+    private static Device	device;
+
+    /**
+     * @param args
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    public static void main(String[] args) throws IOException,
+	    InterruptedException {
+
+	// get I2C bus instance
+	final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
+	final GpioController gpio = GpioFactory.getInstance();
+
+	// Define I2C devices
+	i2cKeypads = new I2CthroughPin(gpio, RaspiPin.GPIO_02, RaspiPin.GPIO_03);
+	i2cExpanders = new I2CthroughPin(gpio, RaspiPin.GPIO_00,
+		RaspiPin.GPIO_07);
+	i2cHumiditySensor = new I2CthroughPin(gpio, RaspiPin.GPIO_12,
+		RaspiPin.GPIO_13);
+
+	GpioPinDigitalMultipurpose reset_pin = gpio
+		.provisionDigitalMultipurposePin(RaspiPin.GPIO_15,
+			PinMode.DIGITAL_OUTPUT, PinPullResistance.PULL_UP);
+
+	// Declaration of instance
+	// final SetVariables setVariables = new SetVariables();
+	SetVariables.setVariables();
+	final Thread control = new Thread(new MainControl(i2cExpanders,
+		i2cKeypads));
+	final Thread alarm = new Thread(new Alarm());
+	final Thread climaticControl = new Thread(new ClimaticControl(
+	i2cHumiditySensor));
+
+	//Start of Threads
+	control.start();
+	alarm.start();
+	// climaticControl.start();
+
+	for (;;) {
+	    reset_pin.high();
+	    Variables.setHouse_active(true);
+	    Thread.sleep(150);
+	    reset_pin.low();
+	    Variables.setHouse_active(false);
+	    Thread.sleep(10000);
+	}
+    }
+}

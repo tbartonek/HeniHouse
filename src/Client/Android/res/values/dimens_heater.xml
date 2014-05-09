@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--<dimen name="activity_horizontal_margin">16dp</dimen>-->
+	<dimen name="heater_textTitleSize">25dp</dimen>
+	<dimen name="heater_textValueSize">45dp</dimen>
+	<dimen name="heater_textUnitSize">32dp</dimen>
+	
+	<dimen name="heater_item_size">260dp</dimen>
+	<dimen name="heater_button_small">60dp</dimen>
+	
+
+</resources>

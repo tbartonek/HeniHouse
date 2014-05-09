@@ -1,0 +1,46 @@
+package devices;
+
+import interfaces.I2CthroughPin;
+
+public class AD_MCP3221 {
+    private I2CthroughPin i2c;
+    private double	digitalValue;
+
+    public AD_MCP3221(I2CthroughPin i2c) {
+	this.i2c = i2c;
+    }
+
+    public double readDigitalValue() {
+	int dataMSB = 0;
+	int dataLSB = 0;
+
+	try {
+	    i2c.start();
+	    i2c.stop();
+	    i2c.start();
+	    System.out.println("Zadost o prevod.");
+	    i2c.write(155);
+	    System.out.println("ACK OK.");
+	    Thread.sleep(10000);
+
+	    System.out.println("Zadost o cteni.");
+	    i2c.write(154);
+	    System.out.println("ACK OK, cteni.");
+
+	    dataMSB = i2c.read(false);
+	    dataLSB = i2c.read(true);
+	    i2c.stop();
+	    System.out.println(dataMSB);
+	    System.out.println(dataLSB);
+	    // digitalValue = (((dataMSB & 0x7F) << 4) + (dataLSB >> 4));
+	    digitalValue = (((dataMSB & 0x7F) << 8) + dataLSB);
+	    System.out.println(digitalValue);
+
+	} catch (InterruptedException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
+
+	return digitalValue;
+    }
+}

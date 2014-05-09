@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HenI House</string>
+    <string name="button_title">Set values</string> 
+    <string name="clock_label">Last actualization:</string>
+    <string name="bDevices">Devices</string>
+    <string name="bHeaters">Heating</string>
+    <string name="bWeathers">Weather</string>
+    <string name="bAlarm">Alarm</string>
+    <string name="bComunication">Communication</string>
+    <string name="bCameras">Video devices</string>
+    <string name="bMultimedia">Multimedia</string>
+    <string name="bSettings">Settings</string>
+    <string name="bPower">Switch off</string>
+    <string name="bCautions">Alarms</string>
+    <string name="save">Save values</string>
+    <string name="title_activity_heater">HeaterActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="errorConnectServer">Error connecting to server!</string>
+    <string name="errorGeneral">General error!</string>
+    <string name="errorDouble">Byla zadána chybná hodnota!</string>
+    <string name="saveValue">Hodnota byla uložena.</string>
+    <string name="saveValues">Hodnoty byly uloženy.</string>
+    <string name="saveValuesWrong">Hodnoty nebyly uloženy!</string>
+    <string name="IPServer">10.0.0.9</string>
+    <string name="title_activity_meteo">MeteoActivity</string>
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="alarm_label">Alarm</string>
+    <string name="alarm_title">Alarm information:</string>
+    <string name="alarm_setting_title">Alarm settings:</string>
+    <string name="alarm_setting">Settings</string>
+    <string name="alarm_popUp_servis_password">Enter service password:</string>
+    <string name="alarm_popUp_wrong_pass">Password required!</string>
+    <string name="alarm_cancel">Back</string>
+    <string name="alarm_change">Password change</string>
+    <string name="alarm_MaxTryPassword">Maximal invalid password input count: </string>
+    <string name="alarm_AlertTime">Alarm activation time [s]: </string>
+    <string name="alarm_StartTime">Remaining time to alarm activation [s]: </string>
+    <string name="alarm_PasswordChange">Password change</string>
+    <string name="alarm_Password">Old password : </string>
+    <string name="alarm_PasswordNew1">New password 1. : </string>
+    <string name="alarm_PasswordNew2">New password 2. : </string>
+    <string name="alarm_ServisPasswordChange">Service password change</string>
+    <string name="alarm_PasswordCheck">New passwords do not match or are invalid!</string>
+    <string name="alarm_PasswordSave">New alarm password was saved.</string>
+    <string name="alarm_PasswordWrong">Incorrect old password!</string>
+    <string name="alarm_ServisPasswordCheck">New service passwords do not match or are invalid!</string>
+    <string name="alarm_ServisPasswordSave">New service password was saved.</string>
+    <string name="alarm_ServisPasswordWrong">Incorrect service password!</string>
+    <string name="alarm_activate">Alarm is activated.</string>
+    <string name="alarm_deactivate">Alarm is deactivated.</string>
+    <string name="alarm_requestDeactivate">Enter password to deactivate alarm.</string>
+    <string name="alarm_wrongPassword">Wrong password entered.</string>
+    <string name="alarm_wasActivate">Alarm was activated.</string>
+    <string name="alarm_deleteNumber">Password was deleted.</string>
+
+</resources>

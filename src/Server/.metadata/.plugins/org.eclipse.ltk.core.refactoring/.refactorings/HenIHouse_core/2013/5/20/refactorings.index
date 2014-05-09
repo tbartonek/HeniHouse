@@ -1,0 +1,7 @@
+1368472826564	Encapsulate field 'checkMoveDetectors'
+1368472852183	Encapsulate field 'checkSoundDetectors'
+1368472874891	Encapsulate field 'checkTMPDetectors'
+1368472898868	Encapsulate field 'checkOtherDetectors'
+1368472928302	Encapsulate field 'checkMagneticDetectors'
+1368738175435	Encapsulate field 'Alert'
+1368738239298	Encapsulate field 'alertTimem'

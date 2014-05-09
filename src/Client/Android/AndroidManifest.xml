@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0" package="com.henihouse.core">
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/logo"
+        android:label="HenI House"
+        android:logo="@drawable/logo"
+        android:theme="@style/AppBaseTheme" >
+        <activity
+            android:name="com.henihouse.core.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.henihouse.core.AlarmActivity"
+            android:parentActivityName="com.henihouse.core.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.henihouse.core.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.henihouse.core.DevicesActivity"
+            android:parentActivityName="com.henihouse.core.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.henihouse.core.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.henihouse.core.HeaterActivity"
+            android:parentActivityName="com.henihouse.core.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.henihouse.core.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.henihouse.core.MeteoActivity"
+            android:parentActivityName="com.henihouse.core.MainActivity" android:theme="@android:style/Theme.NoTitleBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.henihouse.core.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

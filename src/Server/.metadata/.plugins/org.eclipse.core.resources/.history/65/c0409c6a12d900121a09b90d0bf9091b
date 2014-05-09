@@ -1,0 +1,152 @@
+package core;
+
+import interfaces.I2CthroughPin;
+
+import java.io.IOException;
+
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.RaspiPin;
+import com.pi4j.io.i2c.I2CBus;
+import com.pi4j.io.i2c.I2CFactory;
+
+import control.MainControl;
+import database.AlarmVariables;
+import database.Device;
+import database.Devices;
+import database.Expander;
+import database.Expanders;
+import database.Pin;
+
+public final class main {
+    private static I2CthroughPin  i2cExpanders;
+    private static I2CthroughPin  i2cKeypads;
+    private static I2CthroughPin  i2cHumiditySensor;
+    private static Expanders      expanders;
+    private static Expander       expander;
+    private static Pin	    pin;
+    private static AlarmVariables alarmVariables;
+    private static Devices	devices;
+
+    /**
+     * @param args
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    public static void main(String[] args) throws IOException,
+	    InterruptedException {
+	// TODO Auto-generated method stub
+
+	// get I2C bus instance
+	final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
+	final GpioController gpio = GpioFactory.getInstance();
+	i2cExpanders = new I2CthroughPin(gpio, RaspiPin.GPIO_01,
+		RaspiPin.GPIO_00);
+	// MAX1038 max1038 = new MAX1038(i2cExpanders);
+	// max1038.setRegister();
+	i2cKeypads = new I2CthroughPin(gpio, RaspiPin.GPIO_02, RaspiPin.GPIO_03);
+	// i2cHumiditySensor = new I2CthroughPin(gpio, RaspiPin.GPIO_04,
+	// RaspiPin.GPIO_05);
+	// HumiditySensor humiditySensor = new HumiditySensor(i2cHumiditySensor,
+	// "3.5V");
+	// for (int i = 0; i < 5; i++) {
+	// humiditySensor.readTemperatureAndHumidity();
+	// Thread.sleep(2000);
+	// }
+
+	setVariables();
+	final Thread control = new Thread(new MainControl(expanders,
+		i2cExpanders, devices.getKeypads(), i2cKeypads, alarmVariables));
+	control.start();
+
+	// final Thread alarm = new Thread(new Alarm(expanders, alarmVariables,
+	// devices));
+	// alarm.start();
+
+	// final Thread alarm = new Thread(new Alarm(i2cKeypads,
+	// numberOfKeypad));
+	// alarm.start();
+
+	for (;;) {
+	    // System.out.println("Hlavni vlakno");
+	    Thread.sleep(20000);
+	}
+
+    }
+
+    private static void setVariables() {
+	// Expander Input
+	int expander_address = 1;
+	expanders = new Expanders();
+	expander = new Expander("Prvni", expander_address);
+	expander.setType("Input");
+	expander.getPortA().setUsedPin(5);
+	expander.getPortA().setName("Dvere");
+	expander.getPortB().setUsedPin(2);
+	expander.getPortB().setName("Alarm");
+
+	for (int index = 0; index < 5; index++) {
+	    pin = new Pin("Pin_" + index, "input", false, index,
+		    expander_address + "_" + index);
+	    expander.getPortA().setPin(index, pin);
+	}
+	for (int index = 0; index < 2; index++) {
+	    pin = new Pin("Pin_" + index, "input", false, index,
+		    expander_address + "_" + (8 + index));
+	    expander.getPortB().setPin(index, pin);
+	}
+	// expanders.setInputExpander(expander_address, expander);
+
+	// Expander Output
+	expander_address = 0;
+	expander = new Expander("Druhy", expander_address);
+	expander.setType("Output");
+	expander.getPortA().setUsedPin(5);
+	expander.getPortA().setName("Topeni");
+	expander.getPortA().setChange(true);
+	expander.getPortB().setUsedPin(2);
+	expander.getPortB().setName("Vetrani");
+	expander.getPortB().setChange(true);
+
+	for (int index = 0; index < 7; index++) {
+	    pin = new Pin("Pin_" + index, "output", false, index,
+		    expander_address + "_" + index);
+	    expander.getPortA().setPin(index, pin);
+	}
+	for (int index = 0; index < 7; index++) {
+	    pin = new Pin("Pin_" + index, "output", false, index,
+		    expander_address + "_" + (8 + index));
+	    expander.getPortB().setPin(index, pin);
+	}
+	// expanders.addOutputExpander(0, null);
+	expanders.setOutputExpander(expander_address, expander);
+
+	alarmVariables = new AlarmVariables();
+	alarmVariables.setActive(true);
+	// all devices - senzor for alarm, sockets, lights, sirens,....
+	devices = new Devices();
+	Device moveDetector = new Device();
+	moveDetector.setName("Chodba");
+	moveDetector.setType("Pohybove cidlo");
+	moveDetector.setDelay(35000);
+	moveDetector.setAddress(0);
+	moveDetector.setPin(8);
+	devices.addMoveDetector(moveDetector);
+
+	moveDetector = new Device();
+	moveDetector.setName("Okna");
+	moveDetector.setType("Zvukove cidlo");
+	moveDetector.setDelay(0);
+	moveDetector.setAddress(0);
+	moveDetector.setPin(9);
+	devices.addSoundDetector(moveDetector);
+
+	Device keypad = new Device();
+	keypad.setName("Vchod");
+	keypad.setType("Klavesnice");
+	keypad.setAddress(0);
+	// devices.addKeypad(keypad);
+
+    }
+
+}

@@ -1,0 +1,68 @@
+package com.henihouse.meteo;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+
+import lipermi.exception.LipeRMIException;
+import lipermi.handler.CallHandler;
+import lipermi.handler.filter.GZipFilter;
+import lipermi.net.IServerListener;
+import lipermi.net.Server;
+
+import com.henihouse.interfaces.meteo.Interfaces;
+import com.henihouse.variables.InterfacesVariables;
+import com.henihouse.variables.Log;
+import com.henihouse.variables.Logs;
+
+public class ThreadServer implements Runnable{
+
+	private int measureTime = 60; //[s] default 60s
+	CallHandler callHandler;
+	
+	public void init(){
+	    
+		Logs.addLog(new Log("Info", "Server", "Creating."));
+		Server server = new Server();
+		callHandler = new CallHandler();
+
+		try {
+		    callHandler.registerGlobal(Interfaces.class, this);
+		    server.addServerListener(new IServerListener() {
+			public void clientConnected(Socket socket) {
+			    Logs.addLog(new Log("Info", "Server", "Client connected: "
+				    + socket.getInetAddress()));
+
+			}
+
+			public void clientDisconnected(Socket socket) {
+			    Logs.addLog(new Log("Info", "Server",
+				    "Client disconnected: " + socket.getInetAddress()));
+			}
+		    });
+		    server.bind(InterfacesVariables.getPort(), callHandler,
+			    new GZipFilter());
+		    InetAddress IP = InetAddress.getLocalHost();
+		    Logs.addLog(new Log("Info", "Server", "Creating Server is done."));
+		    // System.out.println("Creating Server is done with IP: "
+		    // + IP.getLocalHost());
+		} catch (LipeRMIException | IOException e) {
+		    Logs.addLog(new Log("Error", "Server", "error during creating."));
+		    Logs.setServerError(true);
+		    e.printStackTrace();
+		};
+	    
+	}
+	
+	public void run() {
+		for (;;) {
+			try {
+				
+				Thread.sleep((measureTime * 1000));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}

@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_black_3"
+    android:baselineAligned="false"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="@dimen/widthMenu"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:scrollbars="none" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/ibLock"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/lock_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibLock"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bAlarm"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibDevices"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView1"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/device_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibDevices"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bDevices"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibHeaters"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView5"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/climatic_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibHeaters"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bHeaters"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibWeathers"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView7"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/weather_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibWeathers"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bWeathers"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibComunicaton"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView8"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/comunication_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibComunicaton"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bComunication"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibCameras"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/camera_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibCameras"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bCameras"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibMultimedia"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView6"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/movie_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibMultimedia"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/bGapSmall"
+                android:text="@string/bMultimedia"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibSettings"
+                android:layout_width="@dimen/bMiddle"
+                android:layout_height="@dimen/bMiddle"
+                android:layout_below="@+id/TextView3"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/services_icon_128" />
+
+            <TextView
+                android:id="@+id/TextView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ibSettings"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:text="@string/bSettings"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/heater_main"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|top"
+            android:orientation="horizontal"
+            android:paddingTop="10dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/bLight"
+                    android:layout_height="@dimen/bLight"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/heater_bedroom" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/heater_room_1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/heater_textTitleSize"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/heater_item_size"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/heater_temp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/heater_textTitleSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/heater_temp_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text="25.4"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textValueSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text="@string/heater_temp_unit"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textUnitSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/heater_humi"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/heater_textTitleSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/heater_humi_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text="55"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textValueSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text="@string/heater_humi_unit"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textUnitSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/heater_item_size"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/heater_set"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/heater_textTitleSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp" >
+
+                        <EditText
+                            android:id="@+id/heater_temp_set_1"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:background="@android:color/transparent"
+                            android:ems="10"
+                            android:gravity="right"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5"
+                            android:paddingLeft="10dp"
+                            android:text="22.0"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textValueSize"
+                            android:textStyle="bold" />
+
+                      <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text="@string/heater_temp_unit"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textUnitSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/heater_set"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/heater_textTitleSize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/heater_humi_set_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text="50"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textValueSize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text="@string/heater_humi_unit"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/heater_textUnitSize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="20dp" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageButton
+                        android:layout_width="@dimen/heater_button_small"
+                        android:layout_height="@dimen/heater_button_small"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/heater_radiator_on" />
+
+                    <ImageButton
+                        android:layout_width="@dimen/heater_button_small"
+                        android:layout_height="@dimen/heater_button_small"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clock" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageButton
+                        android:layout_width="@dimen/heater_button_small"
+                        android:layout_height="@dimen/heater_button_small"
+                        android:alpha="0.5"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/heater_fan_off" />
+
+                    <ImageButton
+                        android:layout_width="@dimen/heater_button_small"
+                        android:layout_height="@dimen/heater_button_small"
+                        android:layout_marginLeft="10dp"
+                        android:alpha="0.5"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clock" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="250dp"
+            android:onClick="saveValue"
+            android:paddingRight="0dp"
+            android:text="Ulož" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:gravity="top" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingTop="@dimen/bGapTiny" >
+
+            <ImageView
+                android:id="@+id/ivAverageTemperature"
+                android:layout_width="@dimen/bLight"
+                android:layout_height="@dimen/bLight"
+                android:layout_gravity="right"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/thermometer" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:text="@string/heater_average_temp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/averageTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingTop="@dimen/bGapTiny" >
+
+            <ImageView
+                android:id="@+id/ivActualTemperature"
+                android:layout_width="@dimen/bLight"
+                android:layout_height="@dimen/bLight"
+                android:layout_gravity="right"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/thermometer" />
+
+            <TextView
+                android:id="@+id/tvActualTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:text="@string/heater_actual_temp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/actualTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/bGapTiny" >
+
+            <ImageView
+                android:id="@+id/ivSetTemperature"
+                android:layout_width="@dimen/bLight"
+                android:layout_height="@dimen/bLight"
+                android:layout_gravity="right"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/heating" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:text="@string/heater_set_temp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/setTemperature"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:maxLength="5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/bTextSmall"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

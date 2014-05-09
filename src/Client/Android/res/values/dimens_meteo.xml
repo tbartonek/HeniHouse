@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="textTitleSize">30dp</dimen>
+	<dimen name="textValueSize">40dp</dimen>
+	<dimen name="textUnitSize">32dp</dimen>
+	
+	<dimen name="textTitleSmallSize">25dp</dimen>
+	<dimen name="textValueSmallSize">35dp</dimen>
+	<dimen name="textUnitSmallSize">28dp</dimen>
+	
+	<dimen name="textDateSize">20dp</dimen>
+	<dimen name="picturePrediction">64dp</dimen>
+
+</resources>

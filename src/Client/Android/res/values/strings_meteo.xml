@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string name="meteo_temperature">Temperature:</string>
+<string name="meteo_humidity">Humidity:</string>
+<string name="meteo_pressure">Pressure:</string>
+<string name="meteo_rainfall">Rain fall:</string>
+<string name="meteo_wind">Wind speed:</string>
+
+<string name="meteo_temperature_unit">°C</string>
+<string name="meteo_humidity_unit">%</string>
+<string name="meteo_pressure_unit">hPa</string>
+<string name="meteo_rainfall_unit">mm/24h</string>
+<string name="meteo_wind_unit">hm/h</string>
+
+<string name="meteo_day">Day:</string>
+<string name="meteo_night">Night:</string>
+<string name="meteo_cloudy">Cloud cover:</string>
+<string name="meteo_location">Forecast:</string>
+
+<string name="meteo_prediction_warning">Server neodpověděl, zkontrolujte internetové připojení.</string>
+
+
+
+
+
+</resources>

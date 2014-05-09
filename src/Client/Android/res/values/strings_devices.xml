@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+ 	<string name="devices_light">Lights:</string>
+
+    <string name="devices_light_door">Doors</string>
+    <string name="devices_light_rear">Vzadu</string>
+    <string name="devices_light_shop">Vytrínky</string>
+    <string name="devices_light_table">Tabule</string>
+    
+    <string name="devices_socket">Zásuvky:</string>
+    <string name="devices_socket_1">Zavlažování</string>
+
+
+</resources>

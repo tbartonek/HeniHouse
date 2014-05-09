@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;com.henihouse.interfaces.meteo&apos; to &apos;Interfaces/src/com.henihouse.interfaces.core&apos;&#x0A;- Original project: &apos;interfaces_meteo&apos;&#x0A;- Destination element: &apos;Interfaces/src/com.henihouse.interfaces.core&apos;&#x0A;- Original element: &apos;interfaces_meteo/src/com.henihouse.interfaces.meteo&apos;&#x0A;- Update references to refactored element" description="Move package" destination="=Interfaces/src&lt;com.henihouse.interfaces.core" element1="/src&lt;com.henihouse.interfaces.meteo" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1387958702753" version="1.0"/>
+</session>

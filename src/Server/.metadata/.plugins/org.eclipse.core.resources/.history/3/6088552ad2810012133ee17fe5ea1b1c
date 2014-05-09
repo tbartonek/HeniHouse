@@ -1,0 +1,155 @@
+/*
+ * Class for initialisation and communication with temperature sensor MCP9801, TCN75A 
+ */
+
+import java.io.IOException;
+
+import com.pi4j.io.i2c.I2CBus;
+import com.pi4j.io.i2c.I2CDevice;
+import com.pi4j.io.i2c.I2CFactory;
+
+public class MCP9801 {
+
+	private byte basicAddres = 0x48;
+	private int addressDevice;
+	private I2CDevice initDevice;
+	private byte initRegister = 0x00;
+	private int resolution;
+	private double temperature;
+	private boolean alarm_polarity_activHigh;
+	
+	/**
+	 * Constructor for initialisation device
+	 * @param i2cBus
+	 * @param addresDevice1
+	 */
+	public MCP9801 (I2CBus i2cBus, int addresDevice1){
+		addressDevice = addresDevice1;
+		
+		// initialisation device
+		try {
+			initDevice = i2cBus.getDevice(basicAddres + addresDevice1);
+		} catch (IOException e) {
+			System.out.println ("Error in initialization device with address: " + addressDevice + ".");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * Method for setting initialisation register and write to device.
+	 * @param one_shot
+	 * @param resolution1
+	 * @param alarm_polarity_activHigh
+	 * @param shutDown
+	 */
+	public void writeInitRegister (boolean one_shot, int resolution1, boolean alarm_polarity_activHigh1, boolean shutDown){
+		initRegister = 0x00;
+		if (one_shot) initRegister += 0x80;
+		
+		switch (resolution = resolution1) {
+		case 9: 	initRegister += 0x00;
+					break;
+		case 10:	initRegister += 0x20;
+					break;
+		case 11:	initRegister += 0x40;
+					break;
+		case 12:	initRegister += 0x60;
+					break;
+		default:	System.out.println("Wrong number of resolution, set default 9.");
+					initRegister += 0x00;
+					resolution = 9;
+					break;		
+		}
+		
+		if (alarm_polarity_activHigh = alarm_polarity_activHigh1) initRegister += 0x04;
+		
+		if (shutDown) initRegister += 0x01;
+		
+		//System.out.println ("Device with address: " + addressDevice + " has init. register: " + Byte.toString(initRegister) + "."); 
+		
+		try {
+			initDevice.write(1,initRegister);
+		} catch (IOException e) {
+			System.out.println("Error in write init register to device with address: " + addressDevice + ".");
+			//e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Method for reading temperature from device.
+	 * @return temperature
+	 */
+	public double readTemperature(){
+		byte Data = 0;
+		byte[] readData= new byte[2];
+		
+		try{
+        initDevice.write(Data);
+        initDevice.read(readData,0,2);
+		} catch (IOException e) {
+			System.out.println("Error in write/read temperature to/from device with address: " + addressDevice + ".");
+			//e.printStackTrace();
+		}
+		
+		switch (resolution) {
+		case 9: 	temperature = (((readData[0]&0x7F)<<1) + (readData[1]>>7)) * Math.pow(2,-1) ;
+					break;
+		case 10:	temperature = (((readData[0]&0x7F)<<2) + (readData[1]>>6)) * Math.pow(2,-2) ;
+					break;
+		case 11:	temperature = (((readData[0]&0x7F)<<3) + (readData[1]>>5)) * Math.pow(2,-3) ;
+					break;
+		case 12:	temperature = (((readData[0]&0x7F)<<4) + (readData[1]>>4)) * Math.pow(2,-4) ;
+					break;		
+		}
+		System.out.println(temperature);
+		return temperature;
+	}
+	
+	/**
+	 * Method for seting temperature and hysteresis for alarm.
+	 * @param alarmHysteresis1
+	 * @param alarmTemperature1
+	 */
+	public void writeAlarmTempAndHyst(int alarmHysteresis1, int alarmTemperature1){
+		try {
+			//write value of hysteresis
+	        byte[] alarmHysteresis= new byte[2];
+	        alarmHysteresis[0] = (byte) alarmHysteresis1;
+	        alarmHysteresis[1] = 0x00;		
+	        initDevice.write(2, alarmHysteresis, 0, 2);
+
+			//write value of temperature
+	        byte[] alarmTemperature= new byte[2];
+	        alarmTemperature[0] = (byte) alarmTemperature1;
+	        alarmTemperature[1] = 0x00;		
+	        initDevice.write(3, alarmTemperature, 0, 2);
+		
+		} catch (IOException e) {
+			System.out.println("Error in write temperature or hysteresis for alarm to device with address: " + addressDevice + ".");
+			//e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * Method for reading temperature in shutdown. It is usefull for low-power aplication.
+	 * @param resolution1
+	 * @return temperature
+	 * @throws InterruptedException
+	 */
+	public double oneShotTemperature(int resolution1) throws InterruptedException{
+		writeInitRegister(false, resolution1, alarm_polarity_activHigh, true);
+		writeInitRegister(true, resolution1, alarm_polarity_activHigh, true);
+		switch (resolution) {
+		case 10:	Thread.sleep(40);
+					break;
+		case 11:	Thread.sleep(100);
+					break;
+		case 12:	Thread.sleep(220);
+					break;		
+		}
+		return readTemperature();
+	}
+	
+}

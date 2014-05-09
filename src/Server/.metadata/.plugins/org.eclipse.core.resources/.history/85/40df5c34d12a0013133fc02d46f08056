@@ -1,0 +1,242 @@
+package devices;
+
+import interfaces.I2CthroughPin;
+
+public class Keypad16 {
+
+    private int	    address;
+    private i2cBitExpander keypadInterface;
+    private String	 keys;
+
+    public boolean	 alarm_active = false; // false = L = 0V, true = H
+    public boolean	 keys_ok      = false; // same ...
+    public boolean	 keys_delete  = false;
+    public boolean	 buzzer       = false;
+    public boolean	 portA_4_High = false;
+    public boolean	 portA_5_High = false;
+    public boolean	 portA_6_High = false;
+    public boolean	 portA_7_High = false;
+
+    public Keypad16(I2CthroughPin i2c, int address) {
+	this.address = address;
+	try {
+	    keypadInterface = new i2cBitExpander(i2c, address, true, true);
+	    keypadInterface.startExpanderAsKeypad();
+	    System.out.println("Activation keypad with address " + address
+		    + "is OK.");
+	} catch (InterruptedException e) {
+	    System.out
+		    .println("Error in initialization I2C Expander for Keypad. ");
+	    // e.printStackTrace();
+	}
+
+    }
+
+    public String getKey() {
+	String key = "";
+
+	for (int i = 0; i < 4; i++) {
+	    keypadInterface.writeRowKeypad((int) (15 - Math.pow(2, i)));
+	    int data = 0;
+	    if ((data = keypadInterface.readColumnKeypad()) != 15) {
+		if ((data & (1)) == 0) {
+		    switch (i) {
+			case 0:
+			    key = "1";
+			    break;
+			case 1:
+			    key = "2";
+			    break;
+			case 2:
+			    key = "3";
+			    break;
+			case 3:
+			    key = "A";
+			    break;
+		    }
+		};
+		if ((data & (1 << 1)) == 0) {
+		    switch (i) {
+			case 0:
+			    key = "4";
+			    break;
+			case 1:
+			    key = "5";
+			    break;
+			case 2:
+			    key = "6";
+			    break;
+			case 3:
+			    key = "B";
+			    break;
+		    }
+		};
+		if ((data & (1 << 2)) == 0) {
+		    switch (i) {
+			case 0:
+			    key = "7";
+			    break;
+			case 1:
+			    key = "8";
+			    break;
+			case 2:
+			    key = "9";
+			    break;
+			case 3:
+			    key = "C";
+			    break;
+		    }
+		};
+		if ((data & (1 << 3)) == 0) {
+		    switch (i) {
+			case 0:
+			    key = "*";
+			    break;
+			case 1:
+			    key = "0";
+			    break;
+			case 2:
+			    key = "#";
+			    break;
+			case 3:
+			    key = "D";
+			    break;
+		    }
+		};
+		buzzer = true;
+		signalling();
+		try {
+		    Thread.sleep(30);
+		} catch (InterruptedException e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		buzzer = false;
+		signalling();
+	    }
+	}
+	return key;
+
+    }
+
+    public void signalling() {
+	int data = 0;
+
+	if (alarm_active) data += 1;
+	if (keys_ok) data += 2;
+	if (keys_delete) data += 4;
+	if (buzzer) data += 8;
+	if (portA_4_High) data += 16;
+	if (portA_5_High) data += 32;
+	if (portA_6_High) data += 64;
+	if (portA_7_High) data += 128;
+	keypadInterface.setOutputKeypad(255);
+	// keypadInterface.setOutputKeypad(data);
+    }
+
+    /**
+     * Blink with parameters: number of blink, time of blink
+     * 
+     * @param number
+     * @param time
+     */
+    public void blinkAlarmActive(int number, int time) {
+	for (int i = 0; i < number; i++) {
+	    try {
+		alarm_active = true;
+		signalling();
+		Thread.sleep(time);
+		alarm_active = false;
+		signalling();
+		Thread.sleep(time);
+	    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+
+	}
+    }
+
+    /**
+     * Blink with parameters: number of blink, time of blink
+     * 
+     * @param number
+     * @param time
+     */
+    public void blinkKeysOK(int number, int time) {
+	for (int i = 0; i < number; i++) {
+
+	    try {
+		keys_ok = true;
+		buzzer = true;
+		signalling();
+		Thread.sleep(time);
+		keys_ok = false;
+		buzzer = false;
+		signalling();
+		Thread.sleep(time);
+	    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+
+	}
+    }
+
+    /**
+     * Blink with parameters: number of blink, time of blink
+     * 
+     * @param number
+     * @param time
+     */
+    public void blinkKeysDelete(int number, int time) {
+	for (int i = 0; i < number; i++) {
+	    try {
+		keys_delete = true;
+		signalling();
+		Thread.sleep(time);
+		keys_delete = false;
+		signalling();
+		Thread.sleep(time);
+	    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+	}
+    }
+
+    /**
+     * Blink with parameters: number of blink, time of blink
+     * 
+     * @param number
+     * @param time
+     */
+    public void blinkBuzzer(int number, int time) {
+	for (int i = 0; i < number; i++) {
+
+	    try {
+		buzzer = true;
+		signalling();
+		Thread.sleep(time);
+		buzzer = false;
+		signalling();
+		Thread.sleep(time);
+	    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+	}
+    }
+
+    public String getKeys() {
+	return keys;
+    }
+
+    public void setKeys(String keys) {
+	this.keys = keys;
+    }
+
+    public int getAddress() {
+	return address;
+    }
+}

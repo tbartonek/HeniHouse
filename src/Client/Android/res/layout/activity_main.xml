@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableMenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_black_3"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:paddingTop="5dip" >
+
+        <ImageButton
+            android:id="@+id/ibPower"
+            android:layout_width="@dimen/bSmall"
+            android:layout_height="@dimen/bSmall"
+            android:layout_column="5"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/power_icon_128" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/bPower"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/ibDevices"
+            android:layout_width="@dimen/bLarge"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="0"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:onClick="openDevices"
+            android:paddingRight="@dimen/bGap"
+            android:scaleType="centerInside"
+            android:src="@drawable/device_icon_128" />
+
+        <ImageButton
+            android:id="@+id/ibHeaters"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="1"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:scaleType="centerInside"
+            android:onClick="openHeater"
+            android:src="@drawable/climatic_icon_128" />
+
+        <ImageButton
+            android:id="@+id/ibWeathers"
+            android:layout_width="@dimen/bLarge"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="2"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:onClick="openMeteo"
+            android:src="@drawable/weather_icon_128" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:text="@string/bDevices"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:text="@string/bHeaters"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/bWeathers"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dip" >
+
+        <ImageButton
+            android:id="@+id/ibLock"
+            android:layout_width="@dimen/bLarge"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="0"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:onClick="openAlarm"
+            android:paddingRight="@dimen/bGap"
+            android:scaleType="centerInside"
+            android:src="@drawable/lock_icon_128" />
+
+        <ImageButton
+            android:id="@+id/ibSettings"
+            android:layout_width="@dimen/bLarge"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="4"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/services_icon_128" 
+            />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:text="@string/bAlarm"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/bSettings"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dip" >
+
+        <ImageButton
+            android:id="@+id/ibComunicaton"
+            android:layout_width="@dimen/bLarge"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="0"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:scaleType="centerInside"
+            android:src="@drawable/comunication_icon_128" />
+
+        <ImageButton
+            android:id="@+id/ibCameras"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="1"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:scaleType="centerInside"
+            android:src="@drawable/camera_icon_128" />
+
+        <ImageButton
+            android:id="@+id/ibMultimedia"
+            android:layout_width="@dimen/bLarge"
+            android:layout_height="@dimen/bLarge"
+            android:layout_column="2"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/movie_icon_128" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:text="@string/bComunication"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:paddingRight="@dimen/bGap"
+            android:text="@string/bCameras"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/bMultimedia"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right" >
+
+        <ImageButton
+            android:id="@+id/ibCautions"
+            android:layout_width="@dimen/bSmall"
+            android:layout_height="@dimen/bSmall"
+            android:layout_column="5"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/caution_icon_128" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/bCautions"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/bText"
+            android:textStyle="bold" />
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,23 @@
+1380999469488	Encapsulate field 'maxTryPassword'
+1381042247677	Encapsulate field 'active'
+1381045679044	Encapsulate field 'levelLight_keypad'
+1381045701871	Encapsulate field 'levelLight_front'
+1381045725520	Encapsulate field 'levelLight_rear'
+1381045882216	Copy package
+1381045993489	Delete element
+1381046028497	Delete element
+1381046063121	Move compilation unit
+1381046110569	Move compilation unit
+1381046152267	Delete element
+1381046486869	Encapsulate field 'light_front'
+1381046512910	Encapsulate field 'light_rear'
+1381046541263	Encapsulate field 'light_shop'
+1381046568794	Encapsulate field 'light_table'
+1381046685510	Encapsulate field 'alarm_siren'
+1381046716351	Encapsulate field 'heating_thermostat'
+1381048107795	Encapsulate field 'sensor_mooving'
+1381048132191	Encapsulate field 'sensor_noise'
+1381048158905	Encapsulate field 'sensor_TPM'
+1381048184701	Encapsulate field 'sensor_door'
+1381048989959	Encapsulate field 'servisPassword'
+1381049415400	Encapsulate field 'servis_mode'

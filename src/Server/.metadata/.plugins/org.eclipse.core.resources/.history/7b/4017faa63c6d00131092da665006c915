@@ -1,0 +1,22 @@
+package com.henihouse.meteo;
+
+public class ThreadServer implements Runnable{
+
+	private int measureTime = 60; //[s] default 60s
+	
+	public void init(){
+		
+	}
+	
+	public void run() {
+		for (;;) {
+			try {
+				
+				Thread.sleep((measureTime * 1000));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}

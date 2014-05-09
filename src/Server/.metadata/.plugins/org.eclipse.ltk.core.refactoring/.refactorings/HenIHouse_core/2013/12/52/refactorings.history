@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;InterfacesVariables.java&apos; to &apos;Interfaces/src/com.henihouse.interfaces.variables&apos;&#x0A;- Original project: &apos;HenIHouse_core&apos;&#x0A;- Destination element: &apos;Interfaces/src/com.henihouse.interfaces.variables&apos;&#x0A;- Original element: &apos;com.henihouse.variables.InterfacesVariables.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Interfaces/src&lt;com.henihouse.interfaces.variables" element1="/src&lt;com.henihouse.variables{InterfacesVariables.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1387962853403" units="1" version="1.0"/>
+</session>

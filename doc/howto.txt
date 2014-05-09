@@ -1,0 +1,42 @@
+This file contains just few quick how tos.. 
+
+Remote desktop installation on Raspberry Pi
+     sudo apt-get install xrdp 
+
+Raspberry Pi configuration (ssh etc)
+     sudo raspi-config
+	 
+	 
+Install C# on Raspberry Pi
+     sudo apt-get install mono-complete
+	 sudo apt-get install monodevelop
+	 
+	 
+
+SQLLite (http://www.raspberrypiblog.com/2012/11/getting-started-with-databases-on-pi.html)
+sudo apt-get install sqlite3   
+	
+Java
+sudo apt-get update && sudo apt-get install oracle-java7-jdk
+
+
+Using web servers on Raspberry Pi:
+	NGINX
+	http://alexdberg.blogspot.cz/2012/11/creating-public-web-server-on-raspberry.html
+
+	Tomcat
+	sudo apt-get install tomcat7
+	https://heirloomcomputing.zendesk.com/entries/21669897-Running-a-Web-Application-on-Raspberry-Pi
+
+	Jetty
+	sudo apt-get install libjetty-extra
+	sudo apt-get install libjetty6-java
+	sudo apt-get install libjetty6-extra-java
+	sudo apt-get install jetty
+
+	start:
+		sudo java -jar start.jar
+		sudo /etc/init.d/jetty start
+		The default configuration for Jetty in /etc/default/jetty only allows connections from localhost, you need to set JETTY_HOST to 0.0.0.0 to allow Jetty to accept connections from any host.
+		Add the following line to /etc/default/jetty:	
+		JETTY_HOST 0.0.0.0

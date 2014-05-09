@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="heater_room_1">Bedroom</string>
+    <string name="heater_temp">Temperature:</string>
+    <string name="heater_temp_unit">°C</string>
+    <string name="heater_humi">Humidity:</string>
+    <string name="heater_humi_unit">%</string>
+    
+    <string name="heater_set">Set:</string>
+    
+    
+    
+    <string name="heater_max_value">Temperature setpoint is over limit!</string>
+    <string name="heater_average_temp">Average temperature: </string>
+    <string name="heater_actual_temp">Actual temperature: </string>
+    <string name="heater_set_temp">Temperature setpoint: </string>
+    
+    
+</resources>

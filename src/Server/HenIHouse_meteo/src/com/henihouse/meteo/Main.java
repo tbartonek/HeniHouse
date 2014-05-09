@@ -1,0 +1,72 @@
+package com.henihouse.meteo;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.henihouse.devices.I2CthroughPin;
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.GpioPinDigitalInput;
+import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.PinPullResistance;
+import com.pi4j.io.gpio.PinState;
+import com.pi4j.io.gpio.RaspiPin;
+import com.pi4j.io.i2c.I2CBus;
+import com.pi4j.io.i2c.I2CFactory;
+
+public class Main {
+
+	private static GpioPinDigitalOutput voltage_pin;
+	private static GpioPinDigitalInput direction_pin;
+	private static I2CthroughPin i2ctempHumi;
+	/**
+	 * @param args
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public static void main(String[] args) throws IOException,
+			InterruptedException {
+		// get I2C bus instance
+		final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
+		final GpioController gpio = GpioFactory.getInstance();
+
+		voltage_pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03,
+				PinState.LOW);
+
+		direction_pin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_01,
+				PinPullResistance.PULL_DOWN);
+		
+		final GpioPinDigitalInput wind = gpio.provisionDigitalInputPin(RaspiPin.GPIO_00, 
+                PinPullResistance.PULL_UP);
+		
+		final GpioPinDigitalInput rainFall = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, 
+                PinPullResistance.PULL_UP);
+		
+		// Define I2C devices
+		i2ctempHumi = new I2CthroughPin(gpio, RaspiPin.GPIO_04, RaspiPin.GPIO_05);
+		
+				
+		ThreadWindRainFall WindRainFall = new ThreadWindRainFall();
+		ThreadTempHumiPressDireLight OtherValues = new ThreadTempHumiPressDireLight();
+		ThreadServer Server = new ThreadServer();
+		
+		WindRainFall.init(wind, rainFall);
+		OtherValues.init(i2ctempHumi,direction_pin, voltage_pin);
+		Server.init();
+		
+		final Thread windRainFall = new Thread(WindRainFall);
+		final Thread otherValues = new Thread(OtherValues);
+		final Thread server = new Thread(Server);
+		
+		windRainFall.start();
+		otherValues.start();
+		server.start();
+		
+		for(;;){
+			
+			Thread.sleep(10000);
+		}
+
+	}
+}

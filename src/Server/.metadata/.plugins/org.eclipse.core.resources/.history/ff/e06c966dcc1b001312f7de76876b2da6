@@ -1,0 +1,25 @@
+package devices;
+
+import interfaces.I2CthroughPin;
+
+public class AD_MCP3221 {
+    private I2CthroughPin i2c;
+    private Integer       digitalValue;
+
+    public AD_MCP3221(I2CthroughPin i2c) {
+	this.i2c = i2c;
+    }
+
+    public Integer readDigitalValue() {
+	try {
+	    i2c.start();
+	    i2c.write(155);
+
+	} catch (InterruptedException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
+
+	return digitalValue;
+    }
+}
