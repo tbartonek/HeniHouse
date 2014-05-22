@@ -40,3 +40,7 @@ Using web servers on Raspberry Pi:
 		The default configuration for Jetty in /etc/default/jetty only allows connections from localhost, you need to set JETTY_HOST to 0.0.0.0 to allow Jetty to accept connections from any host.
 		Add the following line to /etc/default/jetty:	
 		JETTY_HOST 0.0.0.0
+		
+		
+Sencha web app
+	sencha app build testing

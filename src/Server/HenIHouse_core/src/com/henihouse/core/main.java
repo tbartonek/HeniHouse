@@ -36,7 +36,7 @@ public final class main {
 	    InterruptedException {
 
 	// get I2C bus instance
-	final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
+	final I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_0);
 	final GpioController gpio = GpioFactory.getInstance();
 
 	// Define I2C devices
@@ -103,7 +103,7 @@ public final class main {
 	// final Thread climaticControl = new Thread(ClimaticControl);
 
 	// Start of Threads
-	// control.start();
+	control.start();
 	// keypads.start();
 	// alarm.start();
 	// ServerHeniHouse server = new ServerHeniHouse();
