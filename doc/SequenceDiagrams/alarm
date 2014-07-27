@@ -1,0 +1,26 @@
+title Alarm setup and runtime
+
+User->ClientApp: Configure system
+note right of  User: Sensors, Expanders, GPIO etc. 
+ClientApp->Database/XML: Store configuration
+
+AlarmServlet->Database/XML: Load Configuration 
+note right of  Database/XML: Sensors, Expanders, GPIO etc. 
+AlarmServlet->AlarmServlet: Initialize I2C devices
+AlarmServlet->AlarmServlet: Start evaluation loop
+loop Alarm check
+alt Alarm detected
+     AlarmServlet->AlarmServlet: Set configured GPIO
+note right of  AlarmServlet: Configurable - start siren, swicth light on, start camera etc.
+     AlarmServlet->Database/XML: Store alarm information
+     
+end
+end
+loop External communication
+    CommunicationServlet->Database/XML: Check for alarm request
+alt Alarm detected
+CommunicationServlet->Database/XML: Load Configuration 
+note right of  CommunicationServlet: Action to do-email, SMS etc.
+CommunicationServlet->CommunicationServlet: Process alarm 
+end
+

@@ -1,0 +1,23 @@
+title Scheduler setup and runtime
+
+User->ClientApp: Configure system
+note right of  User: Sensors, Expanders, GPIO etc. 
+ClientApp->Database/XML: Store configuration
+
+User->ClientApp: Configure scheduler
+note right of  User: GPIO to be set in time etc. 
+ClientApp->Database/XML: Store configuration
+
+
+SchedulerServlet->Database/XML: Load Configuration 
+note right of  Database/XML: Sensors, Expanders, GPIO, schedulling events etc. 
+SchedulerServlet->SchedulerServlet: Initialize I2C devices
+SchedulerServlet->SchedulerServlet: Start evaluation loop
+loop
+alt Event condition occured (time, humidity etc.)
+     SchedulerServlet->SchedulerServlet: Set configured GPIO
+note right of  SchedulerServlet: Configurable - start heating, Irrigation etc.
+     SchedulerServlet->Database/XML: Store event information
+     
+end
+end
